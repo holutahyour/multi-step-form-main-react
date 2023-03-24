@@ -1,0 +1,34 @@
+:root{
+    --marine-blue-opacity: hsla(213, 96%, 18%, .5);
+    --marine-blue: hsla(213, 96%, 18%, 1);
+    --purplish-blue-opacity: hsla(243, 100%, 62%, .5);
+    --purplish-blue: hsla(243, 100%, 62%, 1);
+    --pastel-blue-opacity: hsla(228, 100%, 84%, .5);
+    --pastel-blue: hsla(228, 100%, 84%, 1);
+    --light-blue-opacity: hsla(206, 94%, 87%, .5);
+    --light-blue: hsla(206, 94%, 87%, 1);
+    --strawberry-red-opacity: hsla(354, 84%, 57%, .5);
+    --strawberry-red: hsla(354, 84%, 57%, 1);
+    --white: #fff;
+    --black: #000;
+    --gray: #c2c2c2;
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Poppins', sans-serif;
+}
+
+body > div{
+    font-size: 1.6rem;
+    padding: 2rem;
+    height: 100vh;
+}

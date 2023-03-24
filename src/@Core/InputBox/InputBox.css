@@ -1,0 +1,15 @@
+.personal-info__form{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.5rem;
+}
+
+.form-group{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.form-group > input[type=text]{
+    flex-basis: 100%;
+}

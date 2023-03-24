@@ -1,0 +1,26 @@
+.app{
+    /* background: var(--strawberry-red); */
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    border-radius: 2rem;
+    color: white;
+    height: 100%;
+}
+.steps{
+    background-image: url('/public/images/bg-sidebar-desktop.svg');
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 2rem;
+    padding: 3.5rem 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    opacity: .95;
+}
+
+.step_details{
+    color: var(--black);
+    grid-column: 2/-1;
+    margin: 4rem auto;
+}

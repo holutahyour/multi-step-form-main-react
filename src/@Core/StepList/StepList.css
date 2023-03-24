@@ -1,0 +1,41 @@
+.step_list{
+    display: flex;
+    gap: 2rem;
+    width: 100%;    
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--white);
+}
+
+.step_list-number{
+    flex-shrink: 1;
+    border: 1px solid var(--white);
+    align-self: center;
+    display: grid;
+    place-items: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    color: var(--white);
+    font-weight: 600;
+}
+
+.step_list .active{
+    background-color: var(--light-blue);
+    color: var(--marine-blue);
+    border: none;
+}
+
+.step_list-body{
+    flex-shrink: 1;
+}
+
+.step_list-body-header{
+    font-weight: 100;
+    font-size: 1.35rem;
+}
+.step_list-body-details{
+    font-weight: 500;
+    font-size: 1.4rem;
+    letter-spacing: .12rem;
+}
