@@ -1,0 +1,42 @@
+button{
+    font-family: "Ubuntu";
+    background-color: var( --marine-blue);
+    border: none;
+    border-radius: .7rem;
+    padding: 1.3rem 2.3rem;
+    color: var(--white);
+    font-size: 1.5rem;
+    letter-spacing: .1rem;
+    text-transform: capitalize;
+    font-weight: 500;
+    transition: all 100ms ease-in-out;
+}
+
+button:hover{
+    background-color: var(--marine-blue-opacity);
+}
+
+button[data-outline=true]{
+    border: 1px solid var( --marine-blue);
+    background-color: transparent;
+    color: var(--marine-blue);
+}
+
+button[data-outline=true]:hover{
+    border: 1px solid var( --marine-blue);
+    background-color: var( --marine-blue);
+    color: var(--marine-blue);
+    color: var(--white);
+}
+
+button[data-borderless=true]{
+    border: none;
+    background-color: transparent;
+    color: var(--gray);
+}
+
+button[data-borderless=true]:hover{
+    border: none;
+    background-color: transparent;
+    color: var(--marine-blue);
+}

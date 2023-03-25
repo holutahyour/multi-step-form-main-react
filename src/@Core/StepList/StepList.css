@@ -17,8 +17,9 @@
     height: 3.5rem;
     border-radius: 50%;
     color: var(--white);
-    font-weight: 600;
+    font-weight: 700;
 }
+
 
 .step_list .active{
     background-color: var(--light-blue);
@@ -28,14 +29,18 @@
 
 .step_list-body{
     flex-shrink: 1;
+    display: grid;
+    row-gap: .5rem;
 }
 
 .step_list-body-header{
     font-weight: 100;
-    font-size: 1.35rem;
+    opacity: .7;
+    font-size: 1.3rem;
 }
 .step_list-body-details{
-    font-weight: 500;
-    font-size: 1.4rem;
+    font-weight: 700;
     letter-spacing: .12rem;
+    font-size: 1.5rem;
+
 }

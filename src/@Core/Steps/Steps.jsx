@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
+import Button from "../Button";
 import StepList from "../StepList";
 import "./Steps.css";
 
@@ -24,20 +25,22 @@ function Steps({ pages = [] }) {
       </div>
       <div className="step_details">
         {pages[step -1].element}
-        <div>
-          {step > 1 ? (
-            <button onClick={() => setStep(step - 1)}>Back</button>
-          ) : (
-            ""
-          )}
+        <div className="step_details-actions">
+          
           {step != pages.length ? (
-            <button onClick={handlePages}>Next</button>
+            <Button onClick={handlePages}>Next Step</Button>
           ) : (
             ""
           )}
 
           {step == pages.length ? (
-            <button onClick={handlePages}>Confirm</button>
+            <Button onClick={handlePages}>Confirm</Button>
+          ) : (
+            ""
+          )}
+
+          {step > 1 ? (
+            <Button outline={true} borderless={true} onClick={() => setStep(step - 1)}>Go Back</Button>
           ) : (
             ""
           )}
