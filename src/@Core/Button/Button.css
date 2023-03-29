@@ -1,5 +1,5 @@
 button{
-    font-family: "Ubuntu";
+    font-family: var(--font-family-medium);
     background-color: var( --marine-blue);
     border: none;
     border-radius: .7rem;

@@ -22,6 +22,29 @@
     word-spacing: .2rem;
 }
 
+.step_details > section{
+    display: grid;
+    color: var(--marine-blue);
+    font-weight: 500;
+    gap: 4rem;
+    margin-top: 2rem;
+}
+
+.heading_group{
+    display: grid;
+    row-gap: 1rem;
+}
+
+.heading__title{
+    font-family: var(--font-family-medium);
+    font-size: 3rem;
+}
+
+.heading__sub-title{
+    color: var(--gray);
+    letter-spacing: -.05rem;
+}
+
 .step_details-actions{
     display: flex;
     flex-direction: row-reverse;

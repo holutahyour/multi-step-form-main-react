@@ -3,7 +3,24 @@
     src: url("/fonts/Ubuntu-Regular.ttf")
 }
 
-:root{
+@font-face {
+    font-family: "Ubuntu-Medium";
+    src: url("/fonts/Ubuntu-Medium.ttf")
+}
+
+@font-face {
+    font-family: "Ubuntu-Bold";
+    src: url("/fonts/Ubuntu-Bold.ttf")
+}
+
+:root {
+    /* ----- */
+    /* Color */
+    /* ----- */
+
+    /* ------- */
+    /* Primary */
+    /* ------- */
     --marine-blue-opacity: hsla(213, 96%, 18%, .9);
     --marine-blue: hsla(213, 96%, 18%, 1);
     --purplish-blue-opacity: hsla(243, 100%, 62%, .5);
@@ -14,25 +31,43 @@
     --light-blue: hsla(206, 94%, 87%, 1);
     --strawberry-red-opacity: hsla(354, 84%, 57%, .5);
     --strawberry-red: hsla(354, 84%, 57%, 1);
-    --white: #fff;
+    --orange: hsl(25, 100%, 50%);
+
+    /* ------- */
+    /* Neutral */
+    /* ------- */
+    --cool-gray: hsla(231, 11%, 63%, 1);
+    --light-gray: hsla(229, 24%, 87%, 1);
+    --magnolia: hsla(217, 100%, 97%, 1);
+    --alabaster: hsla(231, 100%, 99%, 1);
+    --white: hsla(0, 0%, 100%, 1);
     --black: #000;
-    --gray: #b7b7b7    ;
+    --gray: hsla(231, 11%, 63%, 1);
+    --gray-2: hsla(229, 24%, 87%, 1);
+
+    /* ----------- */
+    /* Font Family */
+    /* ----------- */
+    --font-family-regular: 'Ubuntu', sans-serif;
+    --font-family-medium: 'Ubuntu-Medium', sans-serif;
+    --font-family-bold: 'Ubuntu-Bold', sans-serif;
 }
 
 *,
 *::after,
-*::before{
+*::before {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Ubuntu', sans-serif;}
-
-html{
-    font-size: 62.5%;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: var(--font-family-regular);
 }
 
-body > div{
+html {
+    font-size: 62.5%;
+    font-family: var(--font-family-regular);
+}
+
+body>div {
     font-size: 1.6rem;
     padding: 1.5rem;
     height: 100vh;

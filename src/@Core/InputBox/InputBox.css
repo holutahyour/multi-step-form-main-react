@@ -24,7 +24,7 @@
 
 .form-group > input::placeholder{
     color: var(--gray);
-    font-weight: 6  00;
+    font-weight: 600;
     font-size: 1.5rem;
 }
 
