@@ -1,0 +1,14 @@
+.heading_group{
+    display: grid;
+    row-gap: 1rem;
+}
+
+.heading__title{
+    font-family: var(--font-family-medium);
+    font-size: 3rem;
+}
+
+.heading__sub-title{
+    color: var(--gray);
+    letter-spacing: -.05rem;
+}

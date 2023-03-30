@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import Steps from "../@Core/Steps/Steps";
 import StepList from "../@Core/Steps/Steps";
@@ -7,6 +8,16 @@ import PersonalInfo from "./Pages/PersonalInfo";
 import SelectPlan from "./Pages/SelectPlan";
 import Summary from "./Pages/Summary";
 function App() {
+  const PAYMENT_YEAR = 10;
+
+  const [monthly, setMonthly] = useState(true);
+  const [yearly, setYearly] = useState(false);
+
+  let handleToggle = () => {
+    setMonthly(!monthly);
+    setYearly(!yearly);
+  };
+
   return (
     <main className="app">
       <Steps
@@ -14,22 +25,29 @@ function App() {
           {
             details: "Your Info",
             element: <PersonalInfo />,
-            to: 'personal-info',
+            to: "personal-info",
           },
           {
             details: "Select Plan",
-            element: <SelectPlan />,
-            to: 'select-plan',
+            element: (
+              <SelectPlan
+                handleToggle={handleToggle}
+                monthly={monthly}
+                yearly={yearly}
+                paymentYear={PAYMENT_YEAR}
+              />
+            ),
+            to: "select-plan",
           },
           {
             details: "Add-Ons",
-            element: <AddOns />,
-            to: 'add-ons',
+            element: <AddOns yearly={yearly} paymentYear={PAYMENT_YEAR} />,
+            to: "add-ons",
           },
           {
             details: "Summary",
             element: <Summary />,
-            to: 'summary',
+            to: "summary",
           },
         ]}
       />

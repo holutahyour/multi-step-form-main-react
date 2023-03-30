@@ -11,7 +11,7 @@
 
 .price-card:hover,
 .price-card[data-active=true]{
-    border: 1px solid var(--marine-blue);
+    border: 1px solid var(--purplish-blue);
 }
 
 .price-card[data-active=true]{
