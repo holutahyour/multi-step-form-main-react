@@ -5,37 +5,38 @@ import InputBox from "../../../@Core/InputBox";
 import Toggle from "../../../@Core/Toggle";
 import Heading from "../../../@Core/Heading";
 
-function SelectPlan({ handleToggle, monthly, yearly, paymentYear }) {
+function SelectPlan({ handleToggle, monthly, yearly, paymentYear, active }) {
   const priceCards = [
     {
       title: "Arcade",
       price: 9,
-      iconBackgroundClr: "var(--orange)",
+      icon: "images/icon-arcade.svg",
     },
     {
       title: "Advanced",
       price: 12,
-      iconBackgroundClr: "var(--strawberry-red)",
+      icon: "images/icon-advanced.svg",
     },
     {
       title: "Pro",
       price: 15,
-      iconBackgroundClr: "var(--purplish-blue)",
+      icon: "images/icon-pro.svg",
     },
   ];
 
   return (
-    <section>
+    <section data-active={active}>
       <Heading
         title="Select Plan"
         subTitle="You have the option of monthly or yearly billing."
       />
       <div className="plans">
-        {priceCards.map((x) => (
+        {priceCards.map((x, index) => (
           <PriceCard
+            key={index}
             title={x.title}
             price={yearly ? x.price * paymentYear : x.price}
-            iconBackgroundClr={x.iconBackgroundClr}
+            icon={x.icon}
           />
         ))}
       </div>

@@ -4,11 +4,24 @@ import Button from "../Button";
 import StepList from "../StepList";
 import "./Steps.css";
 
-function Steps({ pages = [] }) {
+function Steps({ allPages = [], finalPage, isComplete, handleIsComplete }) {
+  const STEP_INCREMENT = 1;
+  const ARRAY_DECREMENT = 1;
   const [step, setStep] = useState(1);
-  let handlePages = () => {
-    setStep(step + 1);
-    console.log(step);
+
+  const pages = [...allPages];
+
+  let handleNextPages = () => setStep(step + STEP_INCREMENT);
+  let handlePrevPages = () => setStep(step - STEP_INCREMENT);
+  const handlePage = (element, index) => {
+    return step === index + STEP_INCREMENT
+      ? React.cloneElement(element, {
+          key: index,
+          active: true,
+        })
+      : React.cloneElement(element, {
+        key: index,
+      });
   };
   return (
     <>
@@ -16,35 +29,46 @@ function Steps({ pages = [] }) {
         {pages.map((item, index) => {
           return (
             <StepList
-              stepNumber={index + 1}
+              key={index}
+              stepNumber={index + STEP_INCREMENT}
               details={item.details}
-              active={step == index + 1}
+              active={step == index + STEP_INCREMENT}
             />
           );
         })}
       </div>
       <div className="step_details">
-        {pages[step -1].element}
-        <div className="step_details-actions">
-          
-          {step != pages.length ? (
-            <Button onClick={handlePages}>Next Step</Button>
-          ) : (
-            ""
-          )}
+        {!isComplete ? (
+          <>
+            {pages.map((page, index) => handlePage(page.element, index))}
 
-          {step == pages.length ? (
-            <Button onClick={handlePages}>Confirm</Button>
-          ) : (
-            ""
-          )}
+            <div className="step_details-actions">
+              {step !== pages.length ? (
+                <Button onClick={handleNextPages}>Next Step</Button>
+              ) : (
+                ""
+              )}
 
-          {step > 1 ? (
-            <Button outline={true} borderless={true} onClick={() => setStep(step - 1)}>Go Back</Button>
-          ) : (
-            ""
-          )}
-        </div>
+              {step == pages.length ? (
+                <Button onClick={handleIsComplete} color="var(--purplish-blue)">
+                  Confirm
+                </Button>
+              ) : (
+                ""
+              )}
+
+              {step > ARRAY_DECREMENT ? (
+                <Button outline borderless onClick={handlePrevPages}>
+                  Go Back
+                </Button>
+              ) : (
+                ""
+              )}
+            </div>
+          </>
+        ) : (
+          finalPage
+        )}
       </div>
     </>
   );

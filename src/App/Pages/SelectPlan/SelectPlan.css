@@ -2,3 +2,9 @@
     display: flex;
     gap: 2rem;
 }
+
+@media only screen and (max-width: 475px) {
+    .plans{
+        flex-direction: column;
+    }
+}

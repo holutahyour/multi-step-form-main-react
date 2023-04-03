@@ -20,7 +20,6 @@
 .price-card__icon{
     height: 3.5rem;
     width: 3.5rem;
-    background-color: var(--strawberry-red);
     border-radius: 100%;
     opacity: .6;
 }
@@ -38,4 +37,16 @@
 .price-card__info-price{
     color: var(--gray);
     font-size: 1.4rem;
+}
+
+@media only screen and (max-width: 475px) {
+    .price-card{
+        flex-direction: row;
+        gap: 4rem;
+        border: 1px solid var(--gray-2);
+        flex-basis: 0;
+        border-radius: 1rem;
+        padding: 2rem 1.5rem;
+        transition: all 300ms ease-in-out;
+    }
 }

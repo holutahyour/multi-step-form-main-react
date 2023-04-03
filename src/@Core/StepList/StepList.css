@@ -44,3 +44,18 @@
     font-size: 1.35rem;
 
 }
+
+@media only screen and (max-width: 475px) {
+    .step_list{
+        display: flex;
+        gap: 1rem;
+        width: fit-content;    
+        text-transform: uppercase;
+        text-decoration: none;
+        color: var(--white);
+    }
+
+    .step_list-body{
+        display: none;
+    }
+}

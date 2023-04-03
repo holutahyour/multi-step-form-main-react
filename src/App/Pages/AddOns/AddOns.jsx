@@ -2,7 +2,7 @@ import React from "react";
 import CheckBox from "../../../@Core/CheckBox";
 import Heading from "../../../@Core/Heading";
 
-function AddOns({ yearly, paymentYear }) {
+function AddOns({ yearly, paymentYear, handleAddons , active}) {
   const addOns = [
     {
       label: "Online service",
@@ -22,19 +22,21 @@ function AddOns({ yearly, paymentYear }) {
   ];
 
   return (
-    <section>
+    <section data-active={active}>
       <Heading
         title="Pick add-ons"
         subTitle="Add-ons help enhance your gaming experience."
       />
       <div className="checkboxs">
-        {addOns.map((x) => {
+        {addOns.map((x, index) => {
           return (
             <CheckBox
+              key={index}
               label={x.label}
               details={x.details}
               amount={yearly ? x.price * paymentYear : x.price}
-              paymentMode={yearly ? 'yr' : 'mo'}
+              paymentMode={yearly ? "yr" : "mo"}
+              handleAddons={handleAddons}
             />
           );
         })}

@@ -1,0 +1,23 @@
+.final-page {
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.final-page>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+.final-page__header{
+    color: var(--marine-blue);
+    font-weight: 700;
+}
+
+.final-page__details{
+    color: var(--cool-gray);
+    text-align: center;
+    line-height: 1.5;
+}

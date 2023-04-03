@@ -4,6 +4,7 @@ import Steps from "../@Core/Steps/Steps";
 import StepList from "../@Core/Steps/Steps";
 import "./App.css";
 import AddOns from "./Pages/AddOns";
+import FinalPage from "./Pages/FinalPage";
 import PersonalInfo from "./Pages/PersonalInfo";
 import SelectPlan from "./Pages/SelectPlan";
 import Summary from "./Pages/Summary";
@@ -12,16 +13,30 @@ function App() {
 
   const [monthly, setMonthly] = useState(true);
   const [yearly, setYearly] = useState(false);
+  const [addOns, setAddOns] = useState([]);
+  const [isComplete, setIsComplete] = useState(false)
 
-  let handleToggle = () => {
+  const handleToggle = () => {
     setMonthly(!monthly);
     setYearly(!yearly);
   };
+  
+
+  const handleAddons = (addOn) => {
+    if (addOn.checked) {
+      setAddOns([...addOns, addOn]);
+    } else {
+      let filteredAddOns = addOns.filter((x) => x.label !== addOn.label);
+      setAddOns([...filteredAddOns]);
+    }
+  };
+  
+  const handleIsComplete = () => setIsComplete(!isComplete)
 
   return (
     <main className="app">
       <Steps
-        pages={[
+        allPages={[
           {
             details: "Your Info",
             element: <PersonalInfo />,
@@ -41,15 +56,24 @@ function App() {
           },
           {
             details: "Add-Ons",
-            element: <AddOns yearly={yearly} paymentYear={PAYMENT_YEAR} />,
+            element: (
+              <AddOns
+                yearly={yearly}
+                paymentYear={PAYMENT_YEAR}
+                handleAddons={handleAddons}
+              />
+            ),
             to: "add-ons",
           },
           {
             details: "Summary",
-            element: <Summary />,
+            element: <Summary yearly={yearly} paymentYear={PAYMENT_YEAR} addOns={addOns} />,
             to: "summary",
           },
         ]}
+        finalPage={<FinalPage />}
+        isComplete={isComplete}
+        handleIsComplete={handleIsComplete}
       />
     </main>
   );
