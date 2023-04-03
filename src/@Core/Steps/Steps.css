@@ -1,5 +1,5 @@
 .steps {
-    background-image: url('images/bg-sidebar-desktop.svg');
+    background-image: url('../images/bg-sidebar-desktop.svg');
     background-position: bottom;
     background-size: cover;
     background-repeat: no-repeat;
@@ -42,7 +42,7 @@
 
 @media only screen and (max-width: 475px) {
     .steps {
-        background-image: url('images/bg-sidebar-mobile.svg');
+        background-image: url('../images/bg-sidebar-mobile.svg');
         border-radius: 0;
         display: flex;
         flex-direction: row;
