@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import './Summary.css'
 import Heading from "../../../@Core/Heading";
 

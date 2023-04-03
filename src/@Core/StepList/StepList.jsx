@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import "./StepList.css";
 
 function StepList({
@@ -10,7 +10,7 @@ function StepList({
   element,
 }) {
   return (
-    <Link to={to} className="step_list">
+    <div className="step_list">
       <div className={`step_list-number ${active ? "active" : ""}`}>
         {stepNumber}
       </div>
@@ -18,7 +18,7 @@ function StepList({
         <div className="step_list-body-header">Step {stepNumber}</div>
         <div className="step_list-body-details">{details}</div>
       </div>
-    </Link>
+    </div>
   );
 }
 

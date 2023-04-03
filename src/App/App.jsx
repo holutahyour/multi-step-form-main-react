@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Outlet } from "react-router-dom";
+// import { Outlet } from "react-router-dom";
 import Steps from "../@Core/Steps/Steps";
 import StepList from "../@Core/Steps/Steps";
 import "./App.css";
